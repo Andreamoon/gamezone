@@ -26,6 +26,7 @@ export function App(): React.JSX.Element {
               key={name}
               name={name}
               component={component['screen']}
+              options={{...component.navigationOptions}}
             />
           ))}
         </Stack.Navigator>
