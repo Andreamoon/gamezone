@@ -12,7 +12,7 @@ export const screens: Screens = {
   Home: {
     screen: Home,
   },
-  Details: {screen: ReviewDetails},
+  ReviewDetails: {screen: ReviewDetails},
   About: {
     screen: About,
   },
