@@ -1,12 +1,15 @@
 import React from 'react';
-import { View, Text} from 'react-native';
-import { globalStyles } from '../styles/global';
+import {View, Text, Button} from 'react-native';
+import {globalStyles} from '../styles/global';
 
-export function Home() {
+export function Home({navigation}: any) {
   return (
     <View style={globalStyles.container}>
       <Text style={globalStyles.titleText}>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      />
     </View>
   );
 }
-
