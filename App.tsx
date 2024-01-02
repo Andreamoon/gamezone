@@ -11,21 +11,25 @@ const nunito_regular = require('./assets/fonts/Nunito-Regular.ttf');
 const nunito_bold = require('./assets/fonts/Nunito-Bold.ttf');
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {ReviewDetails} from './screens/ReviewDetails';
+import {screens} from './routes/homeStack';
 
 const Stack = createNativeStackNavigator();
+const AppContext: any = React.createContext(null);
 
 export function App(): React.JSX.Element {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={Home}
-          options={{title: 'Overview'}}
-        />
-        <Stack.Screen name="Details" component={ReviewDetails} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AppContext.Provider value={Stack}>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          {Object.entries(screens).map(([name, component]) => (
+            <Stack.Screen
+              key={name}
+              name={name}
+              component={component['screen']}
+            />
+          ))}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </AppContext.Provider>
   );
 }
