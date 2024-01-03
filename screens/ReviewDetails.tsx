@@ -4,13 +4,14 @@ import {globalStyles} from '../styles/global';
 import {Button} from 'react-native-elements';
 
 export function ReviewDetails({navigation, route}: any) {
-  console.log(route);
+  console.log(navigation);
   return (
     <View style={globalStyles.container}>
-      <Text>{route.params.title}</Text>
+      <Text>Details</Text>
+      {/* <Text>{route.params.title}</Text>
       <Text>{route.params.title}</Text>
       <Text>{route.params.body}</Text>
-      <Text>{route.params.rating}</Text>
+      <Text>{route.params.rating}</Text> */}
     </View>
   );
 }

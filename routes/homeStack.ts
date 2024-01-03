@@ -26,10 +26,5 @@ export const screens: Screens = {
       headerStyle: {backgroundColor: '#eee'},
     },
   },
-  About: {
-    screen: About,
-    navigationOptions: {
-      title: 'Gamezone',
-    },
-  },
+
 };
